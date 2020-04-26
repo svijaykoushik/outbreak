@@ -304,7 +304,7 @@ function createAliens () {
 
     //  All this does is basically start the invaders moving. Notice we're moving the Group they belong to, rather than the invaders directly.
 
-    var tween = game.add.tween(aliens).to( { x: 200 }, 2000, Phaser.Easing.Linear.None, true, 0, 1000, true);
+    var tween = game.add.tween(aliens).to( { x: 200 }, 2000, Phaser.Easing.Linear.None, true, 0, -1, true);
 
 
 
@@ -334,9 +334,9 @@ function setupInvader (invader) {
 
 function descend() {
 
+    game.add.tween(aliens).to( { y: aliens.y + 10 }, 200, Phaser.Easing.Linear.None, true)
 
-
-    aliens.y += 10;
+    //aliens.y + 10;
 
 
 
@@ -368,7 +368,7 @@ function update() {
 
     //  Scroll the background
 
-    background.tilePosition.y += 2;
+    //background.tilePosition.y += 2;
 
     resetVirtualButtons();
 
